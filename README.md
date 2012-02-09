@@ -1,6 +1,6 @@
 # Lingua and Lengua
 
-Lingua is a middleware for the Express.js framework that helps you to internationalise your webapp easily. It determines the language of the user agent and pushes the i18n resources to your views.
+[Lingua](https://github.com/akoenig/express-lingua) is a middleware for the Express.js framework that helps you to internationalise your webapp easily. It determines the language of the user agent and pushes the i18n resources to your views.
 
 Lengua is a fork form Lingua which introduces some features.
 
@@ -24,4 +24,4 @@ Lengua is a fork form Lingua which introduces some features.
 
 Copyright (c) 2011, 
 [André König](http://lochkartenstanzer.de) ([Google+](http://profile.lochkartenstanzer.de)) (andre.koenig -[at]- gmail [*dot*] com)
-[Christian Berkhoff](christian.berkhoff - [at] - gmail [#dot#] com)
+[Christian Berkhoff](#) (christian.berkhoff - [at] - gmail [#dot#] com)
