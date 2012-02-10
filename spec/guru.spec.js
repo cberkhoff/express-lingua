@@ -27,7 +27,7 @@ describe('guru', function() {
   describe('Translations', function(){
     it('should translate a simple key', function() {
       expect(enUsResource.content).toBeDefined();
-      expect(enUsResource.content.HeadLine).toBe('Hello (in en-US).');
+      expect(enUsResource.content.index.headline).toBe('Hello (in en-US).');
     });
   });
 });
