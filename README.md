@@ -28,6 +28,8 @@ Lengua is a fork form Lingua which introduces some features.
 
 1. Locale storage as strategy (Cookie, Session, Azure, etc).
 
+2. Cache update (when all fallbacks fail).
+
 ## Dev
 
 ### Tests
