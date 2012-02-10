@@ -22,7 +22,7 @@ Lengua is a fork form Lingua which introduces some features.
 
 ### Other Stuff
 
-1. Tets :)
+1. Tests :)
 
 ## TODO
 
@@ -46,4 +46,5 @@ jasmine-node.cmd .\guru.spec.js
 
 Copyright (c) 2011, 
 [André König](http://lochkartenstanzer.de) ([Google+](http://profile.lochkartenstanzer.de)) (andre.koenig -[at]- gmail [*dot*] com)
+
 [Christian Berkhoff](#) (christian.berkhoff - [at] - gmail [#dot#] com)
