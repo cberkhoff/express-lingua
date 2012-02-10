@@ -1,0 +1,12 @@
+{
+	"title": "express-lingua - demonstration app",
+    "navigation": {
+    	"german": "German",
+    	"english": "English"
+    },
+
+	"index": {
+		"headline": "Hello (in en-US).",
+		"licence": "MIT licence"
+	}
+}
