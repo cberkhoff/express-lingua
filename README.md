@@ -10,11 +10,17 @@ Lengua is a fork form Lingua which introduces some features.
 
 ## Added features
 
+### For the common mortal
+
 1. User locale stored in session instead of cookie
 
 2. Not case sensitive
 
 3. Country Code
+
+### Other Stuff
+
+1. Tets :)
 
 ## License
 

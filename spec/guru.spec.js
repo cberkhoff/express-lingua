@@ -23,9 +23,10 @@ describe('guru', function() {
       expect(guru).toBeDefined();
       defaultResource = guru.ask([defaultLocale, 'en']);
       expect(defaultResource).toBeDefined();
+      expect(defaultResource.content).toBeDefined();
 		});
 
-    it('should not find an unregistered locale', function(){
+    it('should not find an unregistered locale and use the default', function(){
       crap = guru.ask(['es-cl']);
       expect(crap).toBeDefined();
       expect(crap.locale).toBeDefined();
@@ -35,8 +36,11 @@ describe('guru', function() {
 
   describe('Translations', function(){
     it('should translate a simple key', function() {
-      expect(defaultResource.content).toBeDefined();
       expect(defaultResource.content.index.headline).toBe('Hello (in en-US).');
+    });
+
+    it('should have fallbacks', function() {
+      expect(defaultResource.content.index.subheadline).toBe('Test');
     });
   });
 });
