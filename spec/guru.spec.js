@@ -24,7 +24,9 @@ describe('guru', function() {
       expect(guru).toBeDefined();
       defaultResource = guru.ask([defaultLocale, 'en']);
       expect(defaultResource).toBeDefined();
-      expect(defaultResource.content).toBeDefined();
+      expect(defaultResource.cache).toBeDefined();
+      expect(defaultResource.locale).toBeDefined();
+      expect(defaultResource.locale).toBe(defaultLocale);
 		});
 
     it('case should not matter', function(){
@@ -63,12 +65,13 @@ describe('guru', function() {
 
   describe('Translations', function(){
     it('should translate a simple key', function() {
-      expect(defaultResource.content.index.headline).toBe('Hello (in en-US).');
+      expect(defaultResource.cache.index.headline).toBe('Hello (in en-US).');
+      expect(defaultResource.cache.index.subheadline).not.toBeDefined();
     });
 
     it('should have fallbacks', function() {
-      expect(defaultResource.content.index.subheadline).toBeDefined();
-      expect(defaultResource.content.index.subheadline).toBe('Test');
+      //expect(defaultResource.cache.index.subheadline).toBeDefined();
+      //expect(defaultResource.cache.index.subheadline).toBe('Test');
     });
   });
 });
