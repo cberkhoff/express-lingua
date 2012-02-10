@@ -22,6 +22,10 @@ Lengua is a fork form Lingua which introduces some features.
 
 1. Tets :)
 
+## TODO
+
+1. Locale storage as strategy (Cookie, Session, Azure, etc).
+
 ## License
 
 [MIT License](http://www.opensource.org/licenses/mit-license.php)
