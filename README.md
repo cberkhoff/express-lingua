@@ -44,7 +44,8 @@ jasmine-node.cmd .\guru.spec.js
 
 ## Author
 
-Copyright (c) 2011, 
+Copyright (c) 2011,
+ 
 [André König](http://lochkartenstanzer.de) ([Google+](http://profile.lochkartenstanzer.de)) (andre.koenig -[at]- gmail [*dot*] com)
 
 [Christian Berkhoff](#) (christian.berkhoff - [at] - gmail [#dot#] com)
