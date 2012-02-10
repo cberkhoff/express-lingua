@@ -18,6 +18,8 @@ Lengua is a fork form Lingua which introduces some features.
 
 3. Country Code
 
+4. If the current locale (e.g. en-US) doesnt define a key, Lengua does a lookup in the global locale (e.g. en).
+
 ### Other Stuff
 
 1. Tets :)
@@ -25,6 +27,16 @@ Lengua is a fork form Lingua which introduces some features.
 ## TODO
 
 1. Locale storage as strategy (Cookie, Session, Azure, etc).
+
+## Dev
+
+### Tests
+
+<pre>
+npm install jasmine-node
+cd spec/
+jasmine-node.cmd .\guru.spec.js
+</pre>
 
 ## License
 

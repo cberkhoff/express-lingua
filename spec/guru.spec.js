@@ -1,3 +1,13 @@
+/*
+ * express-lingua
+ * A i18n middleware for the Express.js framework.
+ *
+ * Licensed under the MIT:
+ * http://www.opensource.org/licenses/mit-license.php
+ *
+ * Copyright (c) 2012, 
+ *      Christian Berkhoff (christian.berkhoff - [at] - gmail [#dot#] com)
+ */
 var Guru = require("../lib/guru.js");
 
 describe('guru', function() {
@@ -27,9 +37,11 @@ describe('guru', function() {
       expect(defaultResource.cache).toBeDefined();
       expect(defaultResource.locale).toBeDefined();
       expect(defaultResource.locale).toBe(defaultLocale);
+      expect(defaultResource.country).toBe('us');
+      expect(defaultResource.language).toBe('en');
 		});
 
-    it('case should not matter', function(){
+    it('should not matter the case', function(){
       crap = guru.ask(['DE-DE']);
       expect(crap).toBeDefined();
       expect(crap.locale).toBeDefined();
@@ -44,8 +56,8 @@ describe('guru', function() {
     });
 	});
 
-  describe('Resource Properties', function(){
-    it('default should have a language and country property', function() {
+  describe('Resources Properties', function(){
+    it('should normally have a language and country property', function() {
       expect(defaultResource.country).toBeDefined();
       expect(defaultResource.language).toBeDefined();
 
@@ -53,7 +65,7 @@ describe('guru', function() {
       expect(defaultResource.language).toBe('en');
     });
 
-    it('en should have a language property and zz as country', function() {
+    it('should have a language property and zz as country if no country is applicable', function() {
       enResource = guru.ask(['en']);
       expect(enResource.country).toBeDefined();
       expect(enResource.language).toBeDefined();
@@ -64,14 +76,34 @@ describe('guru', function() {
   });
 
   describe('Translations', function(){
-    it('should translate a simple key', function() {
+    it('should read from cache', function() {
       expect(defaultResource.cache.index.headline).toBe('Hello (in en-US).');
       expect(defaultResource.cache.index.subheadline).not.toBeDefined();
     });
 
-    it('should have fallbacks', function() {
-      //expect(defaultResource.cache.index.subheadline).toBeDefined();
-      //expect(defaultResource.cache.index.subheadline).toBe('Test');
+    it('translate with key', function() {
+      var t1 = defaultResource.translate('title');
+      expect(t1).toBeDefined();
+      expect(t1).toBe('first');
     });
+
+    it('should be able to translate nested element', function() {
+      var t2 = defaultResource.translate('navigation.german');
+      expect(t2).toBeDefined();
+      expect(t2).toBe('German');
+    });
+
+    it('should have fallbacks', function() {
+      var tf = defaultResource.translate('index.subheadline');
+      expect(tf).toBeDefined();
+      expect(tf).toBe('Test');
+    });
+
+    it('should return the key if no value has been found', function() {
+      var k = 'index.subheadline.not.found.very.long.also.a.test';
+      var tk = defaultResource.translate(k);
+      expect(tk).toBeDefined();
+      expect(tk).toBe(k);
+    });    
   });
 });
