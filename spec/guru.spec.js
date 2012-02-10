@@ -40,6 +40,7 @@ describe('guru', function() {
     });
 
     it('should have fallbacks', function() {
+      expect(defaultResource.content.index.subheadline).toBeDefined();
       expect(defaultResource.content.index.subheadline).toBe('Test');
     });
   });
