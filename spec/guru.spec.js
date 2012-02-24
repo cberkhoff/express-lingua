@@ -75,35 +75,4 @@ describe('guru', function() {
     });
   });
 
-  describe('Translations', function(){
-    it('should read from cache', function() {
-      expect(defaultResource.cache.index.headline).toBe('Hello (in en-US).');
-      expect(defaultResource.cache.index.subheadline).not.toBeDefined();
-    });
-
-    it('translate with key', function() {
-      var t1 = defaultResource.translate('title');
-      expect(t1).toBeDefined();
-      expect(t1).toBe('first');
-    });
-
-    it('should be able to translate nested element', function() {
-      var t2 = defaultResource.translate('navigation.german');
-      expect(t2).toBeDefined();
-      expect(t2).toBe('German');
-    });
-
-    it('should have fallbacks', function() {
-      var tf = defaultResource.translate('index.subheadline');
-      expect(tf).toBeDefined();
-      expect(tf).toBe('Test');
-    });
-
-    it('should return the key if no value has been found', function() {
-      var k = 'index.subheadline.not.found.very.long.also.a.test';
-      var tk = defaultResource.translate(k);
-      expect(tk).toBeDefined();
-      expect(tk).toBe(k);
-    });    
-  });
 });

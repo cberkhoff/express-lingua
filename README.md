@@ -8,6 +8,23 @@ Lengua is a fork form Lingua which introduces some features.
 
     $ npm install lengua
 
+## Show me the code!
+
+To translate somenthig (Coffeekup)
+
+<pre>
+@t 'Name'
+@t 'navigation.german'
+</pre>
+
+To get the current country code, language and locale respectively
+
+<pre>
+@currentCountry
+@currentCountryLanguage
+@currentLocale
+</pre>
+
 ## Added features
 
 ### For the common mortal
@@ -38,6 +55,7 @@ Lengua is a fork form Lingua which introduces some features.
 npm install jasmine-node
 cd spec/
 jasmine-node.cmd .\guru.spec.js
+jasmine-node.cmd .\lingua.spec.js
 </pre>
 
 ## License
