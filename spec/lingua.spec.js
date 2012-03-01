@@ -74,6 +74,12 @@
       expect(tk).toBe(k);
     });
 
+    it('shoudnt matter the case', function() {
+      var t2 = translate('Navigation.gErman');
+      expect(t2).toBeDefined();
+      expect(t2).toBe('German');
+    });
+
   });
 
 
